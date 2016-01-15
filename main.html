@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html data-ng-app="chromewifihostApp">
+  <head>
+	<title>Chrome Wi-Fi Host</title>
+	<link rel="stylesheet" media="all" href="css/bootstrap-3.3.5.css">
+	<link rel="stylesheet" media="all" href="css/main.css">
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap-3.3.5.min.js"></script>
+	<script src="js/angular-1.4.4.min.js"></script>
+	<script src="js/app.js"></script>
+  </head>
+  <body data-ng-controller="MainCtrl">
+	<div id="header">
+	  <button class="btn btn-default pull-right" title="Close" data-ng-click="closeApp()">x</button>
+	  <h3 class="text-center">{{title}}</h3>
+	</div>
+	<div class="container-fluid">
+	  <div class="row">
+		<div class="col-md-4">
+		  <div class="panel panel-default">
+			<div class="panel-heading clearfix">
+			  <h3 class="panel-title pull-left" id="connection-header">Gateway</h3>
+			</div>
+			<div class="panel-body">
+			  <div class="input-group gateway-item">
+				<span class="input-group-addon">IP address</span>
+				<input class="form-control" type="text" placeholder="192.168.4.1" data-ng-model="gateway.ip">
+			  </div>
+			  <div class="input-group gateway-item">
+				<span class="input-group-addon">Port</span>
+				<input class="form-control" type="text" placeholder="80" data-ng-model="gateway.port">
+			  </div>
+			  <button class="btn btn-success btn-sm" data-ng-style="{'display': (gateway.connected === false ? 'block' : 'none')}" data-ng-click="connect()">Connect</button>
+			  <button class="btn btn-danger btn-sm" data-ng-style="{'display': (gateway.connected === true ? 'block' : 'none')}" data-ng-click="disconnect()">Disconnect</button>
+			</div>
+		  </div>
+		  <div class="panel panel-default">
+			<div class="panel-heading clearfix">
+			  <h3 class="panel-title pull-left">Commands</h3>
+			</div>
+			<div class="panel-body">
+			  <div class="input-group">
+				<input class="form-control" type="text" placeholder="Message" data-ng-model="send.text" data-ng-keydown="$event.which === 13 && sendMsg(send.text)">
+				<span class="input-group-btn">
+				  <button class="btn btn-default" data-ng-click="sendMsg(send.text)">Send</button>
+				</span>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-8">
+		  <textarea class="form-control" id="log-area" rows="20" readonly>{{log}}</textarea>
+		</div>
+	  </div>
+	</div>
+  </body>
+</html>

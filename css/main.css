@@ -1,0 +1,23 @@
+html, body {
+	overflow-y: auto;
+}
+
+body {
+	padding: 10px 10px 10px 10px;
+}
+
+#header {
+	padding-bottom: 20px;
+}
+
+textarea.form-control {
+	height: 650px;
+}
+
+textarea.form-control[readonly] {
+	background-color: #fff;
+}
+
+.gateway-item {
+	padding-bottom: 10px;
+}
