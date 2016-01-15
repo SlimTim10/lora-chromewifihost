@@ -1,0 +1,23 @@
+{
+	"app": {
+		"background": {
+			"scripts": ["js/background.js"]
+		}
+	},
+	"manifest_version": 2,
+	"name": "Chrome Wi-Fi Host",
+	"version": "0.1",
+
+	"description": "Communicate with gateway over Wi-Fi.",
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+
+	"sockets": {
+		"tcp": {
+			"connect" : "*:*"
+		}
+	}
+}
