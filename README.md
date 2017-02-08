@@ -1,3 +1,5 @@
 # Chrome Wi-Fi Host
 
-Communicate with gateway over Wi-Fi.
+Chrome app to be used with LoRa gateway device to communicate over Wi-Fi.
+
+[Launching the app](https://developer.chrome.com/apps/first_app#five)
